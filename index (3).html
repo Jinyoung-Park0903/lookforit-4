@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유전자 우성/열성 판별 사이트</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧬 유전자 우성/열성 판별기</h1>
+            <p>아래 특성들 중 자신에게 해당하는 것을 선택해주세요</p>
+        </header>
+
+        <div id="quiz-section" class="quiz-section">
+            <div class="trait-group">
+                <h3>눈꺼풀 모양</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="eyelid" data-value="double">쌍꺼풀</button>
+                    <button class="trait-btn" data-trait="eyelid" data-value="single">외꺼풀</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>귓불 모양</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="earlobe" data-value="attached">붙은 귓불</button>
+                    <button class="trait-btn" data-trait="earlobe" data-value="free">떨어진 귓불</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>엄지손가락 모양</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="thumb" data-value="straight">곧은 엄지</button>
+                    <button class="trait-btn" data-trait="thumb" data-value="curved">구부러진 엄지</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>머리카락 선</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="hairline" data-value="widow">M자 이마</button>
+                    <button class="trait-btn" data-trait="hairline" data-value="straight">일직선 이마</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>혀 말기</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="tongue" data-value="roll">혀를 말 수 있음</button>
+                    <button class="trait-btn" data-trait="tongue" data-value="noroll">혀를 말 수 없음</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>보조개</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="dimple" data-value="present">보조개 있음</button>
+                    <button class="trait-btn" data-trait="dimple" data-value="absent">보조개 없음</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>손가락 끼우기</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="fingers" data-value="left">왼손 엄지가 위</button>
+                    <button class="trait-btn" data-trait="fingers" data-value="right">오른손 엄지가 위</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>팔짱 끼기</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="arms" data-value="left">왼팔이 위</button>
+                    <button class="trait-btn" data-trait="arms" data-value="right">오른팔이 위</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>코 모양</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="nose" data-value="prominent">높은 콧대</button>
+                    <button class="trait-btn" data-trait="nose" data-value="flat">낮은 콧대</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>턱 모양</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="chin" data-value="cleft">턱 갈라짐 있음</button>
+                    <button class="trait-btn" data-trait="chin" data-value="smooth">턱 갈라짐 없음</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>손목 굽히기</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="wrist" data-value="bend">손목이 90도 이상 굽어짐</button>
+                    <button class="trait-btn" data-trait="wrist" data-value="straight">손목이 90도 미만으로 굽어짐</button>
+                </div>
+            </div>
+
+            <div class="trait-group">
+                <h3>새끼손가락 모양</h3>
+                <div class="options">
+                    <button class="trait-btn" data-trait="pinky" data-value="curved">구부러진 새끼손가락</button>
+                    <button class="trait-btn" data-trait="pinky" data-value="straight">곧은 새끼손가락</button>
+                </div>
+            </div>
+
+            <button id="analyze-btn" class="analyze-btn" disabled>결과 분석하기</button>
+        </div>
+
+        <div id="result-section" class="result-section hidden">
+            <h2>🔬 당신의 유전자 분석 결과</h2>
+            <div class="result-table-container">
+                <table id="result-table" class="result-table">
+                    <thead>
+                        <tr>
+                            <th>특성</th>
+                            <th>당신의 형질</th>
+                            <th>유전자 타입</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody id="result-tbody">
+                    </tbody>
+                </table>
+            </div>
+            <div class="summary">
+                <h3>📊 요약</h3>
+                <p id="summary-text"></p>
+            </div>
+            <button id="reset-btn" class="reset-btn">다시 테스트하기</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
